@@ -160,11 +160,17 @@ function toggleInputs(id_Dev, id_checkbox, clas_inp1, clas_inp2) {
 
   if (document.getElementById(`${id_checkbox}`).checked) {
     inputContainer.classList.add('show');
+
+    inp11.setAttribute("required", true);
+    inp22.setAttribute("required", true);
   } else {
     inputContainer.classList.remove('show');
 
     inp11.value = ""
     inp22.value = ""
+
+    inp11.removeAttribute("required");
+    inp22.removeAttribute("required");
   }
 }
 
@@ -185,19 +191,25 @@ function toggleInputs2(id_Dev, id_checkbox, clas_inp1, clas_inp2) {
   if (document.getElementById(`${id_checkbox}`).checked) {
     inputContainer.classList.add('show');
     show_sec_for_all.classList.add('show2');
-    console.log("1" + scriptURL);
+
+
+    inp11.setAttribute("required", true);
+    inp22.setAttribute("required", true);
 
     hiddenInput.value = "form2";
-    console.log(hiddenInput.value);
+
     
   } else {
     inputContainer.classList.remove('show');
     show_sec_for_all.classList.remove('show2');
-    console.log("2" + scriptURL);
+
     hiddenInput.value = "form1";
-    console.log(hiddenInput.value);
+
     inp11.value = ""
     inp22.value = ""
+
+    inp11.removeAttribute("required");
+    inp22.removeAttribute("required");
   }
 }
 
